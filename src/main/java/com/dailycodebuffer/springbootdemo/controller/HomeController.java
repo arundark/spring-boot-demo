@@ -3,6 +3,7 @@ package com.dailycodebuffer.springbootdemo.controller;
 
 import com.dailycodebuffer.springbootdemo.model.User;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,10 @@ public class HomeController {
         user.setEmailId("arunarangan10@gmai");
 
         return user;
+    }
+
+    @GetMapping("/{id}/{id2}")
+    public String pathVariable(@PathVariable String id, @PathVariable("id2") String name){
+        return "The path variable is : "+id +":"+ name;
     }
 }
