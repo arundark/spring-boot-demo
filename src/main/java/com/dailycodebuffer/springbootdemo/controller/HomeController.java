@@ -2,6 +2,7 @@ package com.dailycodebuffer.springbootdemo.controller;
 
 
 import com.dailycodebuffer.springbootdemo.model.User;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,7 @@ public class HomeController {
         return "hello";
     }
 
-    @RequestMapping("/user")
+    @GetMapping("/user")
     public User user(){
         User user = new User();
         user.setId("1");
