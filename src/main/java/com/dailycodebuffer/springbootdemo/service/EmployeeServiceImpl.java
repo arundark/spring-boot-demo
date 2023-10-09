@@ -18,6 +18,12 @@ public class EmployeeServiceImpl implements EmployeeService{
 
             employee.setEmployeeId(UUID.randomUUID().toString());
         }
+        employees.add(employee);
         return employee;
+    }
+
+    @Override
+    public List<Employee> getAllEmployess() {
+        return employees;
     }
 }
