@@ -15,17 +15,17 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @PostMapping
-    public Employee save(@RequestBody Employee employee){
+    public Employee save(@RequestBody Employee employee) {
         return employeeService.save(employee);
     }
 
     @GetMapping
-    public List<Employee> getAllEmployees(){
+    public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployes();
     }
 
     @GetMapping("/{id}")
-    public Employee getEmployeeById(@PathVariable String id){
+    public Employee getEmployeeById(@PathVariable String id) {
         return employeeService.getEmployeeById(id);
     }
 }

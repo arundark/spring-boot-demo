@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
 
     @RequestMapping("/")
-    public String home(){
+    public String home() {
         return "hello";
     }
 
     @GetMapping("/user")
-    public User user(){
+    public User user() {
         User user = new User();
         user.setId("1");
         user.setName("arun");
@@ -23,14 +23,14 @@ public class HomeController {
     }
 
     @GetMapping("/{id}/{id2}")
-    public String pathVariable(@PathVariable String id, @PathVariable("id2") String name){
-        return "The path variable is : "+id +":"+ name;
+    public String pathVariable(@PathVariable String id, @PathVariable("id2") String name) {
+        return "The path variable is : " + id + ":" + name;
     }
 
     @GetMapping("/query")
     public String requestParam(@RequestParam String name,
-                               @RequestParam(name = "email", required = false,defaultValue = "") String emailId){
+                               @RequestParam(name = "email", required = false, defaultValue = "") String emailId) {
 
-        return "name is : "+name+" Email is : "+ emailId;
+        return "name is : " + name + " Email is : " + emailId;
     }
 }
