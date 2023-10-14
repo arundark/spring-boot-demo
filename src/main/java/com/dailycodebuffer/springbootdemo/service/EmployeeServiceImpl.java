@@ -39,4 +39,16 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .orElseThrow(() -> new EmployeeNotFoundException("" +
                         "Employee not found with id: " + id));
     }
+
+    @Override
+    public String deleteEmployeeById(String id) {
+        Employee emp = employees.stream()
+                .filter(employee
+                        -> employee.getEmployeeId().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new EmployeeNotFoundException("" +
+                        "Employee not found with id: " + id));
+        employees.remove(emp);
+        return "Employee deleted with id: "+id ;
+    }
 }
