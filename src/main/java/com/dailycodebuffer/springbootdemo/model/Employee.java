@@ -9,7 +9,7 @@ public class Employee {
     private String lastName;
     private String emailId;
 
-    @JsonIgnore
+   // @JsonIgnore
     private String department;
 
     public String getEmployeeId() {
