@@ -9,8 +9,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
-    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-        configurer.favorParameter(true)
+    public void configureContentNegotiation(ContentNegotiationConfigurer configure) {
+        configure.favorParameter(true)
                 .parameterName("mediaType")
                 .defaultContentType(MediaType.APPLICATION_JSON)
                 .mediaType("xml", MediaType.APPLICATION_XML)
